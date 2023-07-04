@@ -152,3 +152,4 @@ cython_debug/
 #.idea/
 *.gpx
 output.json
+*.json
