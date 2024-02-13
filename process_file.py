@@ -28,19 +28,19 @@ for point in track_points:
     longitudes.append(lon)
     if count == 1 and ([lat, lon] != last_lat_lon):
         new_waypoint = {
-        "name": "Start Point",
+        "name": "Start",
         "subtitle": "Address",
         "time": "Time",
-        "icon": "https://cdn.glitch.global/d7999431-1914-42d6-90eb-34009ea65e3e/start-button.png?v=1687983578390",
+        "icon": "/images/start-button.png",
         "coordinates": [lat, lon]
       }
         print("added start point")
     elif count == total_length:
         new_waypoint = {
-        "name": "Finish Point",
-        "subtitle": "You did it!",
+        "name": "Finish",
+        "subtitle": "Subtitle",
         "time": "12:34",
-        "icon": "https://cdn.glitch.global/d7999431-1914-42d6-90eb-34009ea65e3e/finish-icon.png?v=1687983648698",
+        "icon": "/images/finish-icon.png",
         "coordinates": [lat, lon],
         "markerClass": "rotate-minus-35"
       }
@@ -59,9 +59,9 @@ longitudes_sorted = sorted(longitudes)
 output_json = {
     input_short_ride_name: {
     "title": input_ride_name,
-    "runInfo1": "Check this out!",
-    "runInfo2": "A group ride by Brandon.",
-    "headerImageAlt": "Brought to you by @bsmcfadden!",
+    "runInfo1": input_ride_desc1,
+    "runInfo2": input_ride_desc2,
+    "headerImageAlt": f"Brought to you by {input_brought_by}!",
     "trackerBounds": {
       "bottomLeft": [latitudes_sorted[0], longitudes_sorted[-1]],
       "topRight": [latitudes_sorted[-1], longitudes_sorted[0]]
